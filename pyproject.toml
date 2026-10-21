@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minilake"
+version = "1.0.0"
+description = "A compact AWS S3, Parquet, Apache Arrow, and Snowflake data lakehouse pipeline"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Rutva Patel"}]
+dependencies = [
+  "pyarrow>=14.0.0,<20.0.0",
+]
+
+[project.optional-dependencies]
+aws = ["boto3>=1.28,<2"]
+snowflake = ["snowflake-connector-python>=3.5,<4"]
+dev = ["pytest>=7.4,<9", "pytest-cov>=4.1,<7"]
+all = [
+  "boto3>=1.28,<2",
+  "snowflake-connector-python>=3.5,<4",
+]
+
+[project.scripts]
+minilake = "minilake.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["minilake*"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["minilake"]
+branch = true
+
