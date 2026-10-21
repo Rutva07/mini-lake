@@ -220,12 +220,6 @@ tests/                    # unit and end-to-end tests
 sql/analytics.sql         # example warehouse queries
 ```
 
-## Resume-ready description
-
-> Developed a Python ETL lakehouse integrating Amazon S3, Parquet, Apache Arrow, and Snowflake for scalable SQL analytics; implemented schema validation, Hive partitioning, predicate pushdown, partition pruning, run manifests, and reproducible performance benchmarks.
-
-Replace performance targets with measured benchmark results from the deployment environment before publishing a numeric claim.
-
 ## License
 
 MIT
